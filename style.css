@@ -11,13 +11,13 @@ body{
     height: 100vh;
     background: linear-gradient(174deg, #FFD370 2%, #FFD370 46%, #FFFFFF 46%, #FFFFFF 100%, #E8E8E8 100%) no-repeat;
     color: #333333;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 .wrap{
     max-width: 100%;
     width: 500px;
-    margin: 0 auto;
-    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0 auto; 
     padding-top: 48px;
 }
 
@@ -40,7 +40,6 @@ h1{
 .new-item .form-control{
     background-color: transparent;
     border: 0;
-    font-size: 16px;
     padding-left: 24px;
     color: #9F9A91;
     letter-spacing: 0.7px;
@@ -103,14 +102,16 @@ h1{
     list-style: none;
     display: flex; 
 }
-
+/*已完成的列表，不顯示未完成的項目*/
 .todoList.checkedUl li{
     display: none;
 }
+/*已完成的列表，顯示完成的項目*/
 .todoList.checkedUl li.checked{
     display: flex;
 }
 
+/*未完成的列表，不顯示完成的項目*/
 .todoList.uncheckedUl li.checked{
     display: none;
 }

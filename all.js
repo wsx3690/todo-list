@@ -67,6 +67,7 @@ todoList.addEventListener('click',function(e){
     }
     let num=e.target.getAttribute('data-num');
     data.splice(num,1);
+    localStorage.setItem('todoList', JSON.stringify(data));
     init();
 });
 
@@ -76,10 +77,6 @@ init();
 //篩選邏輯
 const filter = document.querySelector(".nav");
 filter.addEventListener("click",function(e){
-    if (e.target.value == undefined){
-        return ;
-    }
-    
     if (e.target.id == "all-tab"){
         todoList.className='todoList'
     }else if (e.target.id == "unfinished-tab"){
@@ -95,7 +92,7 @@ const clear = document.querySelector(".clear");
 
 clear.addEventListener('click',function(e){
     let update=[];
-    data.forEach(function(item,index){
+    data.forEach(function(item){
         if(item.checked ==false || item.checked == undefined){
             update.push(item);
         }
